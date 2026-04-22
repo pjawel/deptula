@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Georgia", "Times New Roman", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-primary: #c5a059; /* Gold */
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #fdfbf7; /* Cream */
+  --color-dark: #2d2a26;
+  --color-body: #4a453e;
+  --color-soft-border: rgba(197, 160, 89, 0.2);
+}
+
+@layer base {
+  body {
+    @apply font-serif bg-secondary text-body;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-dark;
+  }
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full hover:bg-primary/50;
+}
